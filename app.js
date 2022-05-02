@@ -31,7 +31,7 @@ form.addEventListener('submit', function (e) {
     // console.log(userInput)
     input1.value = ''
     para.addEventListener('click', function () {
-        para.style.textDecoration = 'line-through'
+        para.classList.toggle('evntclick')
     })
     if (input1.value === '') {
         h1.innerText = 'ToDo...'
