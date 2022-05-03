@@ -39,7 +39,7 @@ form.addEventListener('submit', function (e) {
 })
 for (let para of p)
     para.addEventListener('click', function () {
-        para.style.textDecoration = 'line-through'
+        para.classList.toggle('evntclick')
     })
 
 button.addEventListener('click', function () {
