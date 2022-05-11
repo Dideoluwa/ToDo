@@ -23,7 +23,7 @@ form.addEventListener('submit', function (e) {
     arr.push(userInput)
     let para = document.createElement('p')
     for (i = 0; i < arr.length; i++) {
-        console.log(`${i}: ${arr[i]}`)
+        // console.log(`${i}: ${arr[i]}`)
     }
     para.textContent = `${i}: ${userInput}`
     div.append(para)
@@ -36,21 +36,31 @@ form.addEventListener('submit', function (e) {
     if (input1.value === '') {
         h1.innerText = 'ToDo...'
     }
+    para.addEventListener('dblclick', function () {
+        para.innerHTML = ''
+        let userInput = input1.value
+        arr.splice(userInput, 1)
+    })
 })
-for (let para of p)
+for (let para of p){
     para.addEventListener('click', function () {
         para.classList.toggle('evntclick')
     })
-
+    para.addEventListener('dblclick', function () {
+        para.innerHTML = ''
+        let userInput = input1.value
+        arr.splice(userInput, 1)
+    })
+}
 button.addEventListener('click', function () {
     div.innerHTML = ''
     let userInput = input1.value
     arr.splice(userInput, arr.length)
     // console.log('done')
 })
-clr.addEventListener('click', function(){
-    console.log('clicked')
-    document.body.style.backgroundImage =`linear-gradient(to right, ${randomClr()}, ${randomClr()})`
+clr.addEventListener('click', function () {
+    // console.log('clicked')
+    document.body.style.backgroundImage = `linear-gradient(to right, ${randomClr()}, ${randomClr()})`
     document.body.classList.add('click')
 })
 function randomClr() {
