@@ -20,10 +20,11 @@ h1 {
 }
 
 .clr {
-    height: 20px;
+    height: 30px;
     width: 30px;
     background-color: black;
     float: right;
+    border-radius: 100%;
 }
 
 html {
