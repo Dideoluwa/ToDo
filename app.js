@@ -20,6 +20,12 @@ input1.addEventListener('input', function () {
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     let userInput = input1.value
+    if(input1.value.trim().length === 0){
+        input1.style.background = 'pink'
+        return;
+    } else{
+        input1.style.background = 'white'
+    }
     arr.push(userInput)
     let para = document.createElement('p')
     for (i = 0; i < arr.length; i++) {
@@ -53,8 +59,11 @@ for (let para of p){
     })
 }
 button.addEventListener('click', function () {
-    div.innerHTML = ''
     let userInput = input1.value
+    input1.value = ''
+    div.innerHTML = ''
+    h1.innerText = 'ToDo...'
+    input1.style.background = 'white'
     arr.splice(userInput, arr.length)
     // console.log('done')
 })
